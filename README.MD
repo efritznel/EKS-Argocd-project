@@ -18,25 +18,34 @@ Install ArgoCD inside the cluster
 NB. by default Argocd is deployed in ClusterIP we need to change it in ALB to be able to access it aoutside the network
 
 Look for the server name: kubectl get svc -n argocd
+
     - Edit it: kubectl edit svc argocd-server -n argocd - change clusterIP to LoadBalancer
+
     - Run kubectl get svc -n argocd - Copy the ALB name and access it through your browser
+
     - Get the password: kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo
 
 Build the docker image: docker build -t efritznel/pyapp:v1 .
+
 Push to Docker: docker push efritznel/pyapp:v1
 
 Deploy the application with kubectl
+
 	- Change directory: cd k8s
+
 	- kubectl apply -f ./
 
-Troubleshhot
+# Troubleshoot
+```yaml
 	- kubectl get pods
 	- kubectl describe pod podname
 	- kubectl top pod podname
 	- kubectl logs podname
 	- kubectl get events
+```
 
 Test the app is running: kubectl get svc
+
 Grab the ALB name and access it through your browser
 
 # Setup ArgoCD dashboard
