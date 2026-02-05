@@ -1,8 +1,9 @@
 # Project with EKS and ArgoCD
-Create the cluster with eksctl
-
+Create and delete the cluster with eksctl
+```yaml
 eksctl create cluster --name argocd-cluster --version 1.29 --region us-east-1 --nodegroup-name ng-1 --node-type t3.medium --nodes 2 --nodes-min 1 --nodes-max 3
-
+eksctl delete cluster --name demo-cluster --region us-east-1
+```
 Install ArgoCD inside the cluster
 
 	- Create a seperate name space for ArgoCD
