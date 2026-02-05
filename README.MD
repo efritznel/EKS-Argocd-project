@@ -32,3 +32,23 @@ Troubleshhot
 
 Test the app is running: kubectl get svc
 Grab the ALB name and access it through your browser
+
+# What is YQ?
+
+In DevOps terms, yq is a command-line YAML processor — think of it as:
+
+👉 jq for YAML
+
+It lets you read, modify, and transform YAML files programmatically, which is why it’s heavily used in:
+
+	- Kubernetes manifests
+
+	- Helm values files
+
+	- GitOps pipelines (Argo CD, GitHub Actions, Jenkins)
+
+	- CI/CD automation
+
+yq = Infrastructure automation scalpel for YAML
+
+If you’re doing Kubernetes, Helm, GitOps, or GitHub Actions (like your ArgoCD pipeline), yq is basically a must-have tool.
